@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript">
+        // 1).
+    //    var app = angular.module("sample", []);
+    //    app.controller("emp", function($scope){
+    //     $scope.Name = "John"
+    //     $scope.age = 23;
+    //    });
+    // ------------------------------------------------------
+
+    // 2).
+    // below another way to access scope with minimization.....
+    // below is the way for production level applications......
+       var app = angular.module("sample", []);
+       
+        app.controller("emp",["$scope",function(c){
+          c.Name = "Jonny";
+          c.salary = 4500;
+          c.getAnnualSalary = function(){
+            return (this.salary)*12
+          }
+}]);
+
+        app.controller("customerInfo", ["$scope", function($scope){
+          $scope.name = "Jack"
+          $scope.city = "delhi"
+
+       }]);
+
+    </script>
+
+</head>
+<body ng-app="sample">
+    <div ng-controller="emp">
+        My name is {{Name}} and my annual salary is {{getAnnualSalary()}}.
+        So my Monthly salary is {{salary}}.
+    </div><br>
+    <div ng-controller="customerInfo">
+       Hello customer {{name}}, looks like you live in {{city}}.
+    </div>
+</body>
+</html>

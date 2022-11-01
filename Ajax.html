@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax / Api call http</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="Ajax.js" type="text/javascript"></script>
+
+</head>
+<body ng-app="binding">
+    <div ng-controller="emp" >
+         Value of 'a' is {{a}},
+         but you can change
+         <input type="text" ng-model="a"><br>
+         Value of 'b' is {{b}},
+         but you can change 
+         <input type="text" ng-model="b">
+         <hr>
+         Sum = {{sum}}<br>
+         <button ng-click="doSum()">Calculate</button>
+    </div>
+</body>
+</html>

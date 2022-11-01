@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourth</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript">
+      var app = angular.module("sample", []).run(["$rootScope", function($rootScope){
+            $rootScope.TaxPercent = 30;
+      }]);
+       
+        app.controller("emp",["$scope",function(c){
+         c.Name = "Jonny";
+         c.salary = 45000;
+        //  c.getAnnualSalary = function(){
+        //    return (this.salary)*12
+        //  }
+}]);
+
+        app.controller("empDetails", ["$scope", "$rootScope",function($scope, $rootScope){
+        //  $scope.salary = 4500;
+         $scope.city = "delhi";
+         $scope.getAnnualSalary = function(){
+           return (this.salary)*12
+         }
+         $scope.getTaxes = function () {
+            return $scope.salary * $rootScope.TaxPercent/100
+         }
+        //  $scope.Name = "John";
+
+      }]);
+
+   </script>
+
+</head>
+<body ng-app="sample">
+   <div ng-controller="emp" >
+       Employee Details of <strong>{{Name}}</strong>
+       <!-- {{Name}} annual salary is {{getAnnualSalary()}} it will not work as no inheritance happening here. -->
+       <div ng-controller="empDetails">
+          {{Name}}, salary is {{salary}} and he is lives in {{city}}.<br>
+          {{Name}} annual salary is {{getAnnualSalary()}} and taxes cut is {{getTaxes()}}
+       </div>
+   </div>
+</body>
+</html>
+
+<!-- Scope Inheritance done here -->
+<!-- $rootScope also learned here -->

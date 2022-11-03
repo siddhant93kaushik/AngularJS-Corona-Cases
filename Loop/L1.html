@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop/Conditional</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src =  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="L1.js" type="text/javascript"></script>
+
+</head>
+<body ng-app="app">
+    <div ng-controller="emp">
+    <form class="form-inline">
+        <div class="form-group">
+            <lable>Enter Country Name</lable>
+            <input type="text" class="form-control" ng-model="searchEmpno">
+        </div>
+        <button class="btn btn-primary" ng-click="doSearch()">Search by country name</button>
+    </form>
+    <hr>
+      <div class="row">
+          <div class="col-sm-2">Total Confirmed Cases:</div>
+          <!-- <div class="col-sm-2">{{empno}}</div> -->
+          <div class="col-sm-2">{{confirmed.value}}
+            <!-- <span ng-if="confirmed.value > 50000000" class="alert alert-primary" role="alert">Concerned</span> -->
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2">Total Recoved:</div>
+          <!-- <div class="col-sm-2">{{ename}}</div> -->
+          <div class="col-sm-2">{{recovered.value}}</div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2">Total Deaths:</div>
+          <!-- <div class="col-sm-2">{{sal}}</div> -->
+          <div class="col-sm-2">{{deaths.value}}</div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2">Last Updated On:</div>
+          <!-- <div class="col-sm-2">{{dptno}}</div> -->
+          <div class="col-sm-2">{{lastUpdate}}</div>
+      </div>
+      <!-- <div class="row">
+          <div class="col-sm-2">Employee hire date</div>
+          <div class="col-sm-2">{{hiredate}}</div>
+      </div>
+      <div class="row">
+          <div class="col-sm-2">Employee dob</div>
+          <div class="col-sm-2">{{dob}}</div>
+      </div> -->
+    </div>
+
+    
+</body>
+</html>
+

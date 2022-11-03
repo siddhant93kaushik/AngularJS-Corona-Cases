@@ -19,9 +19,9 @@
     // above service object is getting created..
 
     // below adding all the members to the service object..
-   // oCalcService.getSum = function(a,b){
-  //    return parseInt(a) + parseInt(b);
- //};
+//    oCalcService.getSum = function(a,b){
+//      return parseInt(a) + parseInt(b);
+//  };
 
  // using a callback function(cb)....in a asynchronous way..
   //    oCalcService.getSum = function(a, b, cb){
@@ -35,7 +35,6 @@
 // Services example....
 //...........................................................................
 
-//2).....Using Service....
 var app = angular.module("binding", []);
 
 app.controller("emp",["$scope","calcFactory",function($scope,calcFactory){
@@ -77,4 +76,5 @@ app.factory('calcFactory',['$http','$log', function($http, $log){
     return oCalcService;
 }]);
 
+// the method is used the factory service method to calculate sum of numbers....
 
